@@ -1,9 +1,29 @@
-# Destor
-![Made with](http://ForTheBadge.com/images/badges/made-with-python.svg)
+_Repo metadata_
 
-[![DevSkim](https://github.com/wfxey/Destor/actions/workflows/devskim.yml/badge.svg)](https://github.com/wfxey/Destor/actions/workflows/devskim.yml)                       ![License](https://img.shields.io/github/license/wfxey/Destor.svg)
-## Description
+[![wfxey](https://github.com/wfxey/Destor/workflows/wfxey/badge.svg)](https://github.com/wfxey/Destor/actions?query=workflow:"wfxey")
+[![GitHub release](https://img.shields.io/github/release/wfxey/Destor?include_prereleases=&sort=semver&color=blue)](https://github.com/wfxey/Destor/releases/)
+[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
+[![issues - Destor](https://img.shields.io/github/issues/wfxey/Destor)](https://github.com/wfxey/Destor/issues)
 
-## How to use?
+_Call-to-Action buttons_
 
-## Mady by
+<div align="center">
+
+
+
+
+
+</div>
+
+## Documentation
+
+<div align="center">
+
+[![view - Documentation](https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge)](/docs/ "Go to project documentation")
+
+</div>
+
+
+## License
+
+Released under [MIT](/LICENSE) by [@wfxey](https://github.com/wfxey).
