@@ -12,4 +12,4 @@ We want to work on bigger Projects as this one. We've got many ideas and are cre
 
 ## License
 
-Released under [MIT](/LICENSE) by [@wfxey](https://github.com/wfxey).
+Released under [MIT](/LICENSE) by D&I ([@wfxey](https://github.com/wfxey) and [@ivole32](https://github.com/ivole32)
