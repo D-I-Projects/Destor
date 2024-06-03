@@ -8,6 +8,7 @@
 Destor is Minecraft Server Management program that has a modern design.
 
 ## Our plans in the future
+We want to work on bigger Projects as this one. We've got many ideas and are creative but we are currently not able to make them happen.
 
 ## License
 
