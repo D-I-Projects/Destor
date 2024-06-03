@@ -4,7 +4,10 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 [![issues - Destor](https://img.shields.io/github/issues/wfxey/Destor)](https://github.com/wfxey/Destor/issues)
 
+## Description
+Destor is Minecraft Server Management program that has a modern design.
 
+## Our plans in the future
 
 ## License
 
