@@ -1,4 +1,7 @@
-*Continuing (https://github.com/Ivole32/Server-Builder / @ivole32) - v24.6.16 / 16.06.24 is going to be released soon!*
+*Continuing (https://github.com/Ivole32/Server-Builder / @ivole32)
+
+v24.6.16 / 16.06.24 is going to be released soon!*
+
 # Destor
 
 [![GitHub release](https://img.shields.io/github/release/wfxey/Destor?include_prereleases=&sort=semver&color=blue)](https://github.com/wfxey/Destor/releases/)
