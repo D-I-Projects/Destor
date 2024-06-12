@@ -1,6 +1,6 @@
-*Continuing (https://github.com/Ivole32/Server-Builder / @ivole32)
+*Continuing (https://github.com/Ivole32/Server-Builder / @ivole32)*
 
-v24.6.16 / 16.06.24 is going to be released soon!*
+*v24.6.16 / 16.06.24 is going to be released soon!*
 
 # Destor
 
