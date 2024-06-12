@@ -34,8 +34,8 @@ Libraries
 - platform (Python Software Foundation License)/LICENSES-PSF.txt
 - tkinter (Python Software Foundation License)/LICENSES-PSF.txt
 - customtkinter (Copyright (c) 2023 Tom Schimansky/MIT License)/LICENSES-customtkinter.txt
-- PIL (Python Imaging Library)/LICENSES-PIL.txt
-- pystray (MIT License)/LICENSES-pystray.txt
+- PIL/Copyright © 1997-2011 by Secret Labs AB, Copyright © 1995-2011 by Fredrik Lundh and contributors/(Python Imaging Library)/LICENSES-pillow+PIL.txt
+- pystray (GNU Lesser General Public License v3)/LICENSES-pystray.txt
 - CTkListBox (Copyright (c) 2024 by Akash Bora/MIT License)/LICENSES-CtkListBox.txt
 - psutil (Copyright (c) 2009, Jay Loden, Dave Deschler, Giampaolo Rodola/BSD 3-Clause License)/LICENSES-psutil.txt
 - sys (Python Software Foundation License)/LICENSES-PSF.txt
@@ -45,7 +45,7 @@ Libraries
 - plyer (Copyright (c) 2010-2023 Kivy Team and other contributors/MIT License)/LICENSES-plyer.txt
 - pathlib (Python Software Foundation License)/LICENSES-PSF.txt
 - subprocess (Python Software Foundation License)/LICENSES-PSF.txt
-- pillow (Python Imaging Library)/LICENSES-PIL.txt
+- pillow/Open Source HPND License/LICENSES-pillow+PIL.txt
 
 Fonts
 - Archivo Black (Copyright 2017 The Archivo Black Project, SIL OFL 1.1)/LICENSES-ArchivoBlack.txt
