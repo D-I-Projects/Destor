@@ -1,6 +1,6 @@
 <div align="center">
   
-# Destor
+# Destor Official
 
 *Continuing (https://github.com/Ivole32/Server-Builder / @ivole32)*
 
