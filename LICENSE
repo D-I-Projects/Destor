@@ -1,0 +1,54 @@
+MIT License
+with copyright notices and license paths.
+
+Copyright (c) 2024 wfxey
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Note: This software utilizes the following libraries, each with their respective licenses:
+
+Libraries
+- os (Python Software Foundation License)/LICENSES-PSF.txt
+- logging (Python Software Foundation License)/LICENSES-PSF.txt
+- datetime (Python Software Foundation License)/LICENSES-PSF.txt
+- shutil (Python Software Foundation License)/LICENSES-PSF.txt
+- requests (Copyright 2019 Kenneth Reitz/Apache 2.0 License)/LICENSES-requests.txt
+- threading (Python Software Foundation License)/LICENSES-PSF.txt
+- configparser (Python Software Foundation License)/LICENSES-PSF.txt
+- platform (Python Software Foundation License)/LICENSES-PSF.txt
+- tkinter (Python Software Foundation License)/LICENSES-PSF.txt
+- customtkinter (Copyright (c) 2023 Tom Schimansky/MIT License)/LICENSES-customtkinter.txt
+- PIL (Python Imaging Library)/LICENSES-PIL.txt
+- pystray (MIT License)/LICENSES-pystray.txt
+- CTkListBox (Copyright (c) 2024 by Akash Bora/MIT License)/LICENSES-CtkListBox.txt
+- psutil (Copyright (c) 2009, Jay Loden, Dave Deschler, Giampaolo Rodola/BSD 3-Clause License)/LICENSES-psutil.txt
+- sys (Python Software Foundation License)/LICENSES-PSF.txt
+- pypresence (Copyright (c) 2022 qwertyquerty/MIT License)/LICENSES-pypresence.txt
+- time (Python Software Foundation License)/LICENSES-PSF.txt
+- urllib.request (Python Software Foundation License)/LICENSES-PSF.txt
+- plyer (Copyright (c) 2010-2023 Kivy Team and other contributors/MIT License)/LICENSES-plyer.txt
+- pathlib (Python Software Foundation License)/LICENSES-PSF.txt
+- subprocess (Python Software Foundation License)/LICENSES-PSF.txt
+- pillow (Python Imaging Library)/LICENSES-PIL.txt
+
+Fonts
+- Archivo Black (Copyright 2017 The Archivo Black Project, SIL OFL 1.1)/LICENSES-ArchivoBlack.txt
+
+
+
