@@ -13,6 +13,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/wfxey/wfxey/main/Picture.png">
 </p>
+*(Only beta fotage)*
 Destor is Minecraft Server Management program that has a modern design. Its our first project and currently our only one too.
 
 ## Our plans in the future
