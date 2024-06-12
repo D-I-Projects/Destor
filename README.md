@@ -11,6 +11,8 @@
 [![DevSkim](https://github.com/wfxey/Destor/actions/workflows/devskim.yml/badge.svg)](https://github.com/wfxey/Destor/actions/workflows/devskim.yml)
 [![issues - Destor](https://img.shields.io/github/issues/wfxey/Destor)](https://github.com/wfxey/Destor/issues)
 
+</div>
+
 ## Description
 
 <img src="https://raw.githubusercontent.com/wfxey/wfxey/main/Picture.png">
@@ -28,5 +30,3 @@ Released under [MIT](/LICENSE) by D&I ([@wfxey](https://github.com/wfxey) and [@
 
 ## Discord
 ![Discord Banner](https://discord.com/api/guilds/1230908371490570314/widget.png?style=banner2)
-
-</div>
