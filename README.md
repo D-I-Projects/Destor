@@ -4,15 +4,16 @@
 
 *v24.6.16 / 16.06.24 is going to be released soon!*
 
+<p align="center">
+  
 [![GitHub release](https://img.shields.io/github/release/wfxey/Destor?include_prereleases=&sort=semver&color=blue)](https://github.com/wfxey/Destor/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 [![DevSkim](https://github.com/wfxey/Destor/actions/workflows/devskim.yml/badge.svg)](https://github.com/wfxey/Destor/actions/workflows/devskim.yml)
 [![issues - Destor](https://img.shields.io/github/issues/wfxey/Destor)](https://github.com/wfxey/Destor/issues)
 
 ## Description
-<p align="center">
-  <img src="https://raw.githubusercontent.com/wfxey/wfxey/main/Picture.png">
-</p>
+
+<img src="https://raw.githubusercontent.com/wfxey/wfxey/main/Picture.png">
 
 *Only beta fotage*
 
@@ -27,3 +28,5 @@ Released under [MIT](/LICENSE) by D&I ([@wfxey](https://github.com/wfxey) and [@
 
 ## Discord
 ![Discord Banner](https://discord.com/api/guilds/1230908371490570314/widget.png?style=banner2)
+
+</p>
