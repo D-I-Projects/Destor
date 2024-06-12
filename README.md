@@ -21,6 +21,10 @@
 
 **Destor is Minecraft Server Management program that has a modern design. Its our first project and currently our only one too.**
 
+##Beta
+
+The program is bigger than 25MB so you can install the Installer here : https://drive.google.com/file/d/1IRlwpLojKWxiNdhEW2wgHRsWRq58cyaO/view?usp=sharing 
+
 ## Our plans in the future
 We want to work on bigger Projects as this one. We've got many ideas and are creative but we are currently not able to make them happen.
 
