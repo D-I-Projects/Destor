@@ -27,7 +27,7 @@ We want to work on bigger Projects as this one. We've got many ideas and are cre
 ## Minecraft's EULA
 
 With downloading our program you agree to Minecraft's EULA (https://www.minecraft.net/en-us/eula).
-In the program itself we will ask you again if your accepting Minecraft's EULA, without accepting theres no way to launch the server.jar file.
+In the program itself we will ask you again if your accepting Minecraft's EULA, without accepting theres no way to launch the server.jar file because its a software provided by Minecraft.
 
 ## License
 
