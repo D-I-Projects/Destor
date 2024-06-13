@@ -24,6 +24,11 @@
 ## Our plans in the future
 We want to work on bigger Projects as this one. We've got many ideas and are creative but we are currently not able to make them happen.
 
+## Minecraft's EULA
+
+With downloading our program you agree to Minecraft's EULA (https://www.minecraft.net/en-us/eula).
+In the program itself we will ask you again if your accepting Minecraft's EULA, without accepting theres no way to launch the server.jar file.
+
 ## License
 
 Released under [MIT](/LICENSE) by D&I Projects ([@wfxey](https://github.com/wfxey) and [@ivole32](https://github.com/ivole32))
