@@ -17,7 +17,7 @@
 
 <img src="https://raw.githubusercontent.com/wfxey/wfxey/main/Picture.png">
 
-*Only beta fotage*
+*Only beta footage*
 
 **Destor is Minecraft Server Management program with a modern design. It is our first project and currently our only one.**
 
