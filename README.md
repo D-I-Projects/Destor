@@ -1,6 +1,6 @@
 <div align="center">
   
-# Destor Official
+# Destor Alpha
 
 *Continuing (https://github.com/Ivole32/Server-Builder / @ivole32)*
 
@@ -15,14 +15,7 @@ Next version is going to be released soon!*
 
 ## Description
 
-<img src="https://raw.githubusercontent.com/wfxey/wfxey/main/Picture.png">
-
-*Only beta fotage*
-
-**Destor is Minecraft Server Management program that has a modern design. Its our first project and currently our only one too.**
-
-## Our plans in the future
-We want to work on bigger Projects as this one. We've got many ideas and are creative but we are currently not able to make them happen.
+This os only the alpha channel it just contains the newest version of the progranm but isnt really released yet. Its not made for ordinary use just for developers.
 
 ## Minecraft's EULA
 
