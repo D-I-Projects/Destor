@@ -19,7 +19,7 @@
 
 *Only beta footage*
 
-**Destor is Minecraft Server Management program with a modern design. It is our first project and currently our only one.**
+**Destor is Minecraft Server management program with a modern design. It is our first project and currently our only one.**
 
 ## Our plans in the future
 We want to work on bigger projects as this one. We have got many ideas and are creative but we are currently not able to make them happen.
