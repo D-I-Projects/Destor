@@ -4,7 +4,7 @@
 
 *Continuing (https://github.com/Ivole32/Server-Builder / @ivole32)*
 
-Next version is going to be released soon!*
+*Next version is going to be released soon!*
 
 [![GitHub release](https://img.shields.io/github/release/wfxey/Destor?include_prereleases=&sort=semver&color=blue)](https://github.com/wfxey/Destor/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
