@@ -17,14 +17,18 @@ from pypresence import Presence
 import time
 import urllib.request
 from threading import Thread
-from plyer import notification
 import tkinter.font as tkFont
 import tkinter as tk
 from tkinter import ttk
 from pathlib import Path 
 import subprocess
+from packaging import version
 
 RPC = None
+
+current_version = "v24.6.19-alpha"
+
+repo_url = "https://api.github.com/repos/wfxey/Destor/tags"
 
 #Discord Client ID
 client_id = "1245459087584661513"
@@ -53,9 +57,9 @@ def log_settings():
         os.makedirs(log_dir)
 
     current_datetime = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-    log_filename = os.path.join(log_dir, f"ServerBuilder_v2.0_{current_datetime}.log")
+    log_filename = os.path.join(log_dir, f"Destor{current_datetime}.log")
 
-    logger = logging.getLogger("ServerBuilder_v2.0")
+    logger = logging.getLogger("Destor")
     logger.setLevel(logging.DEBUG)
 
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -73,6 +77,9 @@ def log_settings():
     return logger
 
 logger = log_settings()
+
+logger.info(current_version)
+logger.info(repo_url)
 
 #Check connection
 def check_internet_connection():
@@ -148,7 +155,7 @@ class Config:
         config['Advanced'] = {'Full-RAM': 'False', 'Developer': 'False'}
 
         config_path = os.path.join(appdata_dir, 'DT_FILES', 'config.ini')
-        os.makedirs(os.path.dirname(config_path), exist_ok=True)  # Ensure directory exists
+        os.makedirs(os.path.dirname(config_path), exist_ok=True)  
         with open(config_path, 'w') as configfile:
             config.write(configfile)
         logger.info("Config.ini has been written.")
@@ -179,21 +186,8 @@ logger.info(f"System: {system_value}")
 logger.info(f"Release: {release_value}")
 logger.info(f"Developer: {developer_value}")
 
-#Example
-def send_notification(title, message, timeout=5):
-    notification.notify(
-        title=title,
-        message=message,
-        timeout=timeout,
-    )
-
 def switch_after_download():
     switch(server_page)
-
-def send_not():
-    title = "Destor"
-    message = "Example8"
-    send_notification(title, message) ##The Notfication title is Python
 
 #Stray
 def load_image():
@@ -361,54 +355,63 @@ def icon_path():
 
 def restart():
     python = sys.executable
-    os.startfile(sys.argv[0])
-    sys.exit()
+    os.execl(python, python, *sys.argv)
+    
+def get_screen_resolution():
+    root = tk.Tk()
+    width = root.winfo_screenwidth()
+    height = root.winfo_screenheight()
+    root.destroy()
+    return width, height
 
-if check_internet_connection():
-    app = ctk.CTk()
-    app.geometry("1100x600")
-    app.title("Destor")
-    app.wm_iconbitmap()
-    icon = os.path.join(appdata_dir, "DT_FILES", "icon.png")
-    if os.path.exists(icon):
-        app.iconphoto(False, ImageTk.PhotoImage(file=icon))
-    else:
+def scale_size(original_size, scale_factor):
+    return int(original_size * scale_factor)
+
+app = ctk.CTk()
+app.geometry("1100x600")
+app.title("Destor")
+app.wm_iconbitmap()
+icon = os.path.join(appdata_dir, "DT_FILES", "icon.png")
+if os.path.exists(icon):
+    app.iconphoto(False, ImageTk.PhotoImage(file=icon))
+else:
         logger.error("Icon file not found: %s", icon)
-    app.resizable(width=False, height=False)
+app.resizable(width=False, height=False)
     
-    if sys.platform == "win32":
+if sys.platform == "win32":
         threading.Thread(target=create_tray_icon, daemon=True).start()
-    else:
-        pass
+else:
+    pass
+
         
-    #Sidebar / Navigation Bar
-    sidebar_fm = tk.Frame(app, bg="black", width=200)
-    sidebar_fm.pack(side=tk.LEFT, fill=tk.Y)
+#Sidebar / Navigation Bar
+sidebar_fm = tk.Frame(app, bg="black", width=200)
+sidebar_fm.pack(side=tk.LEFT, fill=tk.Y)
     
-    archivo_black_font_path = os.path.join('SC_FILES', 'font', 'archivo_black', 'ArchivoBlack-Regular.ttf')
-    app.tk.call('lappend', 'auto_path', os.path.dirname(archivo_black_font_path))
-    app.tk.call('font', 'create', 'archivo_black', '-family', 'ArchivoBlack-Regular', '-size', 16, '-weight', 'bold')
+archivo_black_font_path = os.path.join('SC_FILES', 'font', 'archivo_black', 'ArchivoBlack-Regular.ttf')
+app.tk.call('lappend', 'auto_path', os.path.dirname(archivo_black_font_path))
+app.tk.call('font', 'create', 'archivo_black', '-family', 'ArchivoBlack-Regular', '-size', 16, '-weight', 'bold')
 
-    server_builder_lbl = ctk.CTkLabel(sidebar_fm, text="DESTOR", font=("ArchivoBlack-Regular", 24, "bold"), text_color="white", bg_color="black")
-    server_builder_lbl.pack(side=tk.TOP, pady=(15, 0), padx=10)
+server_builder_lbl = ctk.CTkLabel(sidebar_fm, text="DESTOR", font=("ArchivoBlack-Regular", 24, "bold"), text_color="white", bg_color="black")
+server_builder_lbl.pack(side=tk.TOP, pady=(15, 0), padx=10)
     
-    options_fm = tk.Frame(sidebar_fm, bg="black")
-    options_fm.pack(fill=tk.Y, padx=10, pady=10)
+options_fm = tk.Frame(sidebar_fm, bg="black")
+options_fm.pack(fill=tk.Y, padx=10, pady=10)
 
-    home_btn = ctk.CTkButton(options_fm, text="Home", font=("Open Sans", 16), command=lambda: switch(home_page))
-    home_btn.pack(fill=tk.X, pady=5)
+home_btn = ctk.CTkButton(options_fm, text="Home", font=("Open Sans", 16), command=lambda: switch(home_page))
+home_btn.pack(fill=tk.X, pady=5)
 
-    software_btn = ctk.CTkButton(options_fm, text="Server", font=("Open Sans", 16), command=lambda: switch(server_page))
-    software_btn.pack(fill=tk.X, pady=5)
+software_btn = ctk.CTkButton(options_fm, text="Server", font=("Open Sans", 16), command=lambda: switch(server_page))
+software_btn.pack(fill=tk.X, pady=5)
     
-    settings_btn = ctk.CTkButton(options_fm, text="Settings", font=("Open Sans", 16), command=lambda: switch(settings_page))
-    settings_btn.pack(fill=tk.X, pady=5)
+settings_btn = ctk.CTkButton(options_fm, text="Settings", font=("Open Sans", 16), command=lambda: switch(settings_page))
+settings_btn.pack(fill=tk.X, pady=5)
 
-    server_builder_lbl = tk.Label(sidebar_fm, text="Destor v24.6.11", font=("Open Sans",8), fg="white", bg="black")
-    server_builder_lbl.pack(side=tk.BOTTOM, pady=(0, 10), padx=10)
+server_builder_lbl = tk.Label(sidebar_fm, text=f"Destor {current_version}", font=("Open Sans",8), fg="white", bg="black")
+server_builder_lbl.pack(side=tk.BOTTOM, pady=(0, 10), padx=10)
 
-    main_fm = tk.Frame(app, bg="grey17")
-    main_fm.pack(fill=tk.BOTH, expand=True)
+main_fm = tk.Frame(app, bg="grey17")
+main_fm.pack(fill=tk.BOTH, expand=True)
 
 #Home Page
 def home_page():
@@ -459,11 +462,11 @@ def home_page():
     label = ctk.CTkLabel(text="About", font=("Open Sans", 25), master=tabview.tab("About"))
     label.pack(padx = 20, pady = 10)
     
-    label = ctk.CTkLabel(text="Destor v24.6.11 GitHub", font=("Open Sans", 13), master=tabview.tab("About"))
+    label = ctk.CTkLabel(text=f"Destor {current_version}", font=("Open Sans", 13), master=tabview.tab("About"))
     label.pack()
     label = ctk.CTkLabel(text="@wfxey, @ivole32", font=("Open Sans", 13), master=tabview.tab("About"))
     label.pack()
-    label = ctk.CTkLabel(text="Licenses are inside the license file and the LIBARY_LICENSES and FONT_LICENSES folder", font=("Open Sans", 13), master=tabview.tab("About"))
+    label = ctk.CTkLabel(text="Licenses are inside the licenses files in the LICENSES folder that is inncluded in the GitHub repository.", font=("Open Sans", 13), master=tabview.tab("About"))
     label.pack()
     label = ctk.CTkLabel(text="Copyright (c) 2024 D&I Projects", font=("Open Sans", 13), master=tabview.tab("About"))
     label.pack()
@@ -628,8 +631,8 @@ def delete_server():
             
         elif selected_option == 5:
             logger.info("Starting to delete Server 5")
-            folder1 = "Server_4"
-            file1 = "Server_4.ini"
+            folder1 = "Server_5"
+            file1 = "Server_5.ini"
             datei_pfad = os.path.join(directory, file1)
             ordner_pfad = os.path.join(directory, folder1)
             if os.path.isdir(ordner_pfad):
@@ -841,59 +844,89 @@ def dashboard_page():
     dashboard_frame = ctk.CTkFrame(main_fm)
     dashboard_frame.pack(fill=tk.BOTH, expand=True)
     selected_option = radio_var.get()
-    def start_server():
-        selected_option = radio_var.get()
-        if selected_option == 1:
-            pass
-        if selected_option == 2:
-            pass
-        if selected_option == 3:
-            pass
-        if selected_option == 4:
-            pass
-        if selected_option == 5:
-            pass
-
+    
     def back():
         switch(server_page)
         
-    #Dashboard1
-    if selected_option == 1:
-        logger.info("Redirecting to Dasboard 1")
+    def rules():
+        switch(show_game_rules)
         
+    def last_dashboard():
+        switch(dashboard_page)
+        
+        
+    def show_game_rules():
+        logger.info("Displaying Game Rules")
+        game_rules_frame = ctk.CTkFrame(main_fm)
+        game_rules_frame.pack(fill=tk.BOTH, expand=True)
+        
+        def create_function_frame(parent, button_text, button_command, description_text, indicator_needed=False, fg_color=None):
+            function_frame = ctk.CTkFrame(parent, fg_color=fg_color)
+            function_frame.pack(fill=X, padx=10, pady=10)
+
+            function_frame.columnconfigure(0, weight=1)
+            function_frame.columnconfigure(1, weight=1)
+            function_frame.columnconfigure(2, weight=1)
+
+            button = ctk.CTkButton(function_frame, text=button_text, command=button_command)
+            button.grid(row=0, column=0, sticky="w")
+
+            indicator = None
+            if indicator_needed:
+                indicator = ctk.CTkLabel(function_frame, text="", font=("Open Sans", 15))
+                indicator.grid(row=0, column=1, sticky="nsew")
+
+            description = ctk.CTkLabel(function_frame, text=description_text, font=("Open Sans", 15))
+            description.grid(row=0, column=2, sticky="e")
+
+            return function_frame, button, indicator
+        
+        button_frame = ctk.CTkFrame(game_rules_frame)
+        button_frame.pack(side=tk.BOTTOM, padx=10, pady=10)
+        
+        back_button = ctk.CTkButton(button_frame, text="Back", font=("Open Sans", 14), fg_color="red3", hover_color="red4", command=last_dashboard)
+        back_button.pack(pady=10, padx=10)
+    
+    def start_server():
+        selected_option = radio_var.get()
+        logger.info(f"Starting server for option {selected_option}")
+    
+    if selected_option == 1:
+        logger.info("Redirecting to Dashboard 1")
+
         label = ctk.CTkLabel(dashboard_frame, text="Dashboard", font=("Open Sans", 26))
         label.pack(padx=10, pady=10)
-        
+
         textbox = ctk.CTkTextbox(dashboard_frame, width=700, height=200)
         textbox.configure(state="disabled") 
         textbox.pack(padx=10, pady=10)
-        
+
         button_frame = ctk.CTkFrame(dashboard_frame)
         button_frame.pack(side=tk.BOTTOM, padx=10, pady=10)
-        
+
         start_button = ctk.CTkButton(button_frame, text="Start Server", font=("Open Sans", 14), command=start_server)
         start_button.pack(side=tk.LEFT, padx=10, pady=10)
-        
+
         back_button = ctk.CTkButton(button_frame, text="Back", font=("Open Sans", 14), fg_color="red3", hover_color="red4", command=back)
         back_button.pack(side=tk.RIGHT, padx=10, pady=10)
+        
+        game_rules_button = ctk.CTkButton(button_frame, text="Game Rules", font=("Open Sans", 14), command=rules)
+        game_rules_button.pack(side=tk.LEFT, padx=10, pady=10)
         
     #Dashboard2
     elif selected_option == 2:
         logger.info("Redirecting to Dasboard 2")
         label = ctk.CTkLabel(dashboard_frame, text="2")
         label.pack()
-        
     #Dashboard3
     elif selected_option == 3:
         logger.info("Redirecting to Dashboard 3")
         label = ctk.CTkLabel(dashboard_frame, text="3")
         label.pack()
-        
     #Dashboard4
     elif selected_option == 4:
         logger.info("Redirecting to Dashboard 4")
     #Dashboard5
-    
     elif selected_option == 5:
         logger.info("Redirecting to Dashboard 5")
 ###############################################
@@ -951,6 +984,7 @@ def get_jar_url(version, software):
 def settings_page():
     global toggle_button
     global indicator_label
+    global indicator_label_theme
     
     logger.info("Loaded Settings Page")
     settings_frame = ctk.CTkFrame(main_fm)
@@ -959,12 +993,23 @@ def settings_page():
     settings_label = ctk.CTkLabel(settings_frame, text="General", font=("Open Sans", 25))
     settings_label.pack(pady=15)
 
+    def explorer_open_dir(directory):
+        logger.debug(f"Opening directory: {directory}")
+        subprocess.Popen(['explorer', directory])
+        
     def toggle_and_disable():
         toggle_button.configure(state=ctk.DISABLED)
         toggle_presence()
         time.sleep(1)
         toggle_button.configure(state=ctk.NORMAL)
         update_presence_indicator()
+        
+    def toggle_and_disable_theme():
+        toggle_button.configure(state=ctk.DISABLED)
+        toggle_theme()
+        time.sleep(1)
+        toggle_button.configure(state=ctk.NORMAL)
+        update_theme_indicator()
 
     def create_function_frame(parent, button_text, button_command, description_text, indicator_needed=False, fg_color=None):
         function_frame = ctk.CTkFrame(parent, fg_color=fg_color)
@@ -995,15 +1040,23 @@ def settings_page():
         indicator_needed=True
     )
     
+    change_theme_frame, _, indicator_label_theme = create_function_frame(
+        settings_frame,
+        button_text="Theme",
+        button_command=toggle_and_disable_theme,
+        description_text="Turn dark mode on and off.   ",
+        indicator_needed=True
+    )
+
+    check_for_update_frame, _, _ = create_function_frame(
+        settings_frame,
+        button_text="Check for update",
+        button_command=check_version,
+        description_text="Checks for new updates.   ",
+    )
+    
     settings_label = ctk.CTkLabel(settings_frame, text="Developer", font=("Open Sans", 25))
     settings_label.pack(pady=15)
-    
-    send_notification_frame, _, _ = create_function_frame(
-        settings_frame,
-        button_text="Send Notification",
-        button_command=send_not,
-        description_text="Send a test Notification.   "
-    )
         
     update_code_frame, _, _ = create_function_frame(
         settings_frame,
@@ -1011,8 +1064,93 @@ def settings_page():
         button_command=restart,
         description_text="Restarts the Application.   "
     )
+    
+    open_explorer_frame, _, _ = create_function_frame(
+        settings_frame,
+        button_text="Open DT_FILES",
+        button_command=lambda: explorer_open_dir(path),
+        description_text="Open the AppData from Destor.   "
+    )
 
     update_presence_indicator()
+    update_theme_indicator()
+###############################################
+def check_version():
+    response = requests.get(repo_url)
+    if response.status_code == 200:
+        tags = response.json()
+        if tags:
+            latest_tag = tags[0]['name']
+            if version.parse(latest_tag) > version.parse(current_version):
+                logger.info(f"New version availabel : {latest_tag} / https://github.com/wfxey/Destor/releases/tag/{current_version}")
+                messagebox.showinfo("Destor", f"New version available: {latest_tag}. Current version : {current_version}")
+            else:
+                logger.info("Destor is up to date.")
+                messagebox.showinfo("Destor", f"Destor is up to date. Current version : {current_version}")
+        else:
+            logger.info("No tags found.")
+            messagebox.showinfo("Destor", "No tags found.")
+    else:
+        logger.error(f"Error : {response.status_code}")
+        messagebox.showinfo("Destor", f"Error : {response.status_code}")
+        
+def auto_check():
+    response = requests.get(repo_url)
+    if response.status_code == 200:
+        tags = response.json()
+        if tags:
+            latest_tag = tags[0]['name']
+            if version.parse(latest_tag) > version.parse(current_version):    
+                logger.info(f"New version availabel : {latest_tag} / https://github.com/wfxey/Destor/releases/tag/{current_version}")
+            else:
+                logger.info("No updates found!")
+###############################################
+def read_status_from_file_theme():
+    file_name = 'theme.txt'
+    file_path = os.path.join(appdata_dir, 'DT_FILES', file_name)
+    
+    if not os.path.exists(file_path):
+        try:
+            os.makedirs(os.path.dirname(file_path), exist_ok=True)
+            with open(file_path, 'w') as file:
+                file.write('true')
+            logger.info("File created with default status: true")
+            return 'true'
+        except Exception as e:
+            logger.error(f"Failed to create file: {e}")
+            return 'false'
+    else:
+        try:
+            with open(file_path, 'r') as file:
+                return file.read().strip().lower()
+        except Exception as e:
+            logger.error(f"Failed to read status from file: {e}")
+            return 'false'
+
+def toggle_theme():
+    current_status = read_status_from_file_theme()
+    new_status = 'false' if current_status == 'true' else 'true'
+    try:
+        file_path = os.path.join(directory, 'THEME.txt')
+        with open(file_path, 'w') as file:
+            file.write(new_status)
+        logger.info(f"Light mode set to: {new_status}")
+    except Exception as e:
+        logger.error(f"Failed to write theme status to file: {e}")
+        return
+    theme_switch()
+    update_theme_indicator()
+    
+def theme_switch():
+    current_status = read_status_from_file_theme()
+    if current_status == 'true':
+        ctk.set_appearance_mode("Dark")
+    else:
+        ctk.set_appearance_mode("Light")
+        
+def update_theme_indicator():
+    status = read_status_from_file_theme()
+    indicator_label_theme.configure(text="ON" if status == 'true' else "OFF")
 ###############################################
 def read_status_from_file():
     file_name = 'DISCORD.txt'
@@ -1065,7 +1203,7 @@ def discord_rich_presence():
                 'state': 'Playing',
                 'details': 'Playing',
                 'large_image': 'icon1',
-                'large_text': 'Destor v2.0',
+                'large_text': f"Destor {current_version}",
                 'party_id': 'ae488379-351d-4a4f-ad32-2b9b01c91657',
                 'party_size': [1, 1],
                 'join': 'MTI4NzM0OjFpMmhuZToxMjMxMjM='
@@ -1087,7 +1225,10 @@ def discord_rich_presence():
 def update_presence_indicator():
     status = read_status_from_file()
     indicator_label.configure(text="ON" if status == 'true' else "OFF")
+    
 ###############################################
+auto_check()
+theme_switch()
 discord_rich_presence()
 home_page()
 app.mainloop()
