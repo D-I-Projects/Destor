@@ -26,7 +26,7 @@ from packaging import version
 
 RPC = None
 
-current_version = "v24.6.19-alpha"
+current_version = "v24.6.19-beta"
 
 repo_url = "https://api.github.com/repos/wfxey/Destor/tags"
 
