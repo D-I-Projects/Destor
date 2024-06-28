@@ -1,5 +1,4 @@
 MIT License
-
 with copyright notices and license paths.
 
 Copyright (c) 2024 D&I Projects
@@ -46,10 +45,10 @@ Libraries
 - plyer (Copyright (c) 2010-2023 Kivy Team and other contributors/MIT License)/LICENSES-plyer.txt
 - pathlib (Python Software Foundation License)/LICENSES-PSF.txt
 - subprocess (Python Software Foundation License)/LICENSES-PSF.txt
+- re (Python Software Foundation License)/LICENSES-PSF.txt
 - pillow/Open Source HPND License/LICENSES-pillow+PIL.txt
 
 Fonts
 - Archivo Black (Copyright 2017 The Archivo Black Project, SIL OFL 1.1)/LICENSES-ArchivoBlack.txt
-
 
 
