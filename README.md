@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 [![DevSkim](https://github.com/wfxey/Destor/actions/workflows/devskim.yml/badge.svg)](https://github.com/wfxey/Destor/actions/workflows/devskim.yml)
 [![issues - Destor](https://img.shields.io/github/issues/wfxey/Destor)](https://github.com/wfxey/Destor/issues)
-![Downloads](https://static.pepy.tech/personalized-badge/Destor?period=total&units=international_system&left_color=grey&right_color=green&left_text=downloads)
+[![Github All Releases](https://img.shields.io/github/downloads/D-I-Projects/Destor/total.svg)]()
 
 </div>
 
