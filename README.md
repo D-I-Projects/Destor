@@ -8,7 +8,6 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 [![DevSkim](https://github.com/wfxey/Destor/actions/workflows/devskim.yml/badge.svg)](https://github.com/wfxey/Destor/actions/workflows/devskim.yml)
 [![issues - Destor](https://img.shields.io/github/issues/wfxey/Destor)](https://github.com/wfxey/Destor/issues)
-[![Github All Releases](https://img.shields.io/github/downloads/D-I-Projects/Destor/total.svg)]()
 
 </div>
 
