@@ -9,6 +9,8 @@
 [![DevSkim](https://github.com/wfxey/Destor/actions/workflows/devskim.yml/badge.svg)](https://github.com/wfxey/Destor/actions/workflows/devskim.yml)
 [![issues - Destor](https://img.shields.io/github/issues/wfxey/Destor)](https://github.com/wfxey/Destor/issues)
 
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=flat&logo=discord&logoColor=white)](https://discord.gg/rfrMnA4XCc)
+
 </div>
 
 ## Description
