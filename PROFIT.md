@@ -9,4 +9,4 @@ This project is not created for the purpose of generating revenue or making mone
 
 We encourage contributions from the community to enhance the project's capabilities and reach.
 
-Thank you for being a part of our non-commercial initiative!
+We thank all people that use and like our Software!
