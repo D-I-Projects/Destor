@@ -17,7 +17,7 @@
 
 ![Examplebanner](https://github.com/D-I-Projects/Destor/assets/158351052/2b6481aa-d934-46b0-8575-22c4b7069258)
 
-*v24.6.28_official footage*
+```*v24.6.28_official footage*```
 
 **Destor is a Minecraft Server management program with a modern design. It is our first project and currently our only one.**
 
