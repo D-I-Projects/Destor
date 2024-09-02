@@ -7,7 +7,7 @@
 [![GitHub release](https://img.shields.io/github/release/D-I-Projects/Destor?include_prereleases=&sort=semver&color=blue)](https://github.com/D-I-Projects/Destor/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 [![DevSkim](https://github.com/D-I-Projects/Destor/actions/workflows/devskim.yml/badge.svg)](https://github.com/D-I-Projects/Destor/actions/workflows/devskim.yml)
-[![issues - Destor](https://img.shields.io/github/issues/D-I-Projects/Destor)](https://github.com/wfxey/Destor/issues)
+[![issues - Destor](https://img.shields.io/github/issues/D-I-Projects/Destor)](https://github.com/D-I-Projects/Destor/issues)
 
 [![Discord](https://img.shields.io/badge/Discord-5865F2?style=flat&logo=discord&logoColor=white)](https://discord.gg/rfrMnA4XCc)
 
