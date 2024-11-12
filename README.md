@@ -1,28 +1,19 @@
 <div align="center">
   
-# Destor Official
+# Destor Alpha
 
 *Continuing (https://github.com/Ivole32/Server-Builder / @ivole32)*
 
-[![GitHub release](https://img.shields.io/github/release/D-I-Projects/Destor?include_prereleases=&sort=semver&color=blue)](https://github.com/D-I-Projects/Destor/releases/)
+[![GitHub release](https://img.shields.io/github/release/wfxey/Destor?include_prereleases=&sort=semver&color=blue)](https://github.com/wfxey/Destor/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
-[![DevSkim](https://github.com/D-I-Projects/Destor/actions/workflows/devskim.yml/badge.svg)](https://github.com/D-I-Projects/Destor/actions/workflows/devskim.yml)
-[![issues - Destor](https://img.shields.io/github/issues/D-I-Projects/Destor)](https://github.com/D-I-Projects/Destor/issues)
-
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=flat&logo=discord&logoColor=white)](https://discord.gg/rfrMnA4XCc)
+[![DevSkim](https://github.com/wfxey/Destor/actions/workflows/devskim.yml/badge.svg)](https://github.com/wfxey/Destor/actions/workflows/devskim.yml)
+[![issues - Destor](https://img.shields.io/github/issues/wfxey/Destor)](https://github.com/wfxey/Destor/issues)
 
 </div>
 
-## Description
+## Alpha
 
-![Examplebanner](https://github.com/D-I-Projects/Destor/assets/158351052/2b6481aa-d934-46b0-8575-22c4b7069258)
-
-```*v24.6.28_official footage*```
-
-**Destor is a Minecraft Server management program with a modern design. It is our first project and currently our only one.**
-
-## Our plans in the future
-We want to work on bigger projects as this one. We have got many ideas and are creative but we are currently not able to make them happen.
+This is only the alpha channel it just contains the newest version of the program as a example.py file. Its not made for ordinary use just for developers.
 
 ## Minecraft's EULA
 
